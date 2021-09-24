@@ -9,6 +9,22 @@ export class ClientFormComponent implements OnInit {
 
   constructor() { }
 
+  name : string = "";
+  surname : string = "";
+  civilite : string = "";
+  address : string = "";
+  city : string = "";
+  zipCode : string = "";
+  email : string = "";
+  phone : string = "";
+  login : string = "";
+  password : string = "";
+  confirmPassword : string = "";
+
+  onSubmit() : void {
+
+  }
+
   ngOnInit(): void {
   }
 
