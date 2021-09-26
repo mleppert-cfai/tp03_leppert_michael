@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-client-form-recap',
@@ -8,6 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class ClientFormRecapComponent implements OnInit {
 
   constructor() { }
+
+  @Input() name : string = "none";
+  @Input() surname : string = "none";
+  @Input() civilite : string = "none";
+  @Input() address : string = "none";
+  @Input() city : string = "none";
+  @Input() zipCode : string = "none";
+  @Input() email : string = "none";
+  @Input() phone : string = "none";
+  @Input() login : string = "none";
 
   ngOnInit(): void {
   }
