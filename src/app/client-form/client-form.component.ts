@@ -15,6 +15,7 @@ export class ClientFormComponent implements OnInit {
   address : string = "";
   city : string = "";
   zipCode : string = "";
+  country : string = "";
   email : string = "";
   phone : string = "";
   login : string = "";
@@ -28,6 +29,7 @@ export class ClientFormComponent implements OnInit {
   validAddress : boolean = true;
   validCity : boolean = true;
   validZipCode : boolean = true;
+  validCountry : boolean = true;
   validEmail : boolean = true;
   validPhone : boolean = true;
   validLogin : boolean = true;
@@ -47,10 +49,11 @@ export class ClientFormComponent implements OnInit {
 
     this.validName = this.validateInput(this.name, this.regexNameSurnameCity);
     this.validSurname = this.validateInput(this.surname, this.regexNameSurnameCity);
-    this.validCivilite = this.validateCivilite();
+    this.validCivilite = this.validateDropDownSelection(this.civilite);
     this.validAddress = this.validateInput(this.address, this.regexAddress);
     this.validCity = this.validateInput(this.city, this.regexNameSurnameCity);
     this.validZipCode = this.validateInput(this.zipCode, this.regexZipCode);
+    this.validCountry = this.validateDropDownSelection(this.country);
     this.validEmail = this.validateInput(this.email, this.regexEmail);
     this.validPhone = this.validateInput(this.phone, this.regexPhone);
     this.validLogin = this.validateInput(this.login, this.regexLogin);
@@ -71,8 +74,13 @@ export class ClientFormComponent implements OnInit {
     }
   }
 
-  validateCivilite() : boolean {
-    return false;
+  validateDropDownSelection(selection : string) : boolean {
+    if(selection == "") {
+      return false;
+    }
+    else {
+      return true;
+    }    
   }
 
   validatePasswordMatch(passwordInput : string, confirmPasswordInput : string) : boolean {

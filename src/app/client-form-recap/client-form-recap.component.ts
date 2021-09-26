@@ -15,6 +15,7 @@ export class ClientFormRecapComponent implements OnInit {
   @Input() address : string = "none";
   @Input() city : string = "none";
   @Input() zipCode : string = "none";
+  @Input() country : string = "none";
   @Input() email : string = "none";
   @Input() phone : string = "none";
   @Input() login : string = "none";

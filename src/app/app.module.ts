@@ -9,6 +9,7 @@ import { ClientFormRecapComponent } from './client-form-recap/client-form-recap.
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { PhoneFormatPipe } from './phone-format.pipe';
+import { InvalidInputDirective } from './invalid-input.directive';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,13 @@ import { PhoneFormatPipe } from './phone-format.pipe';
     FooterComponent,
     ClientFormComponent,
     ClientFormRecapComponent,
-    PhoneFormatPipe
+    PhoneFormatPipe,
+    InvalidInputDirective
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
