@@ -342,7 +342,7 @@
         <button class="btn btn-primary" type="submit" (click)="onSubmit()" [disabled]="!validForm">Valider le formulaire</button>
     </div>
 
-    <app-client-form-recap [name]="name" [surname]="surname" 
+    <app-client-form-recap *ngIf="!hideRecap" [name]="name" [surname]="surname" 
     [civilite]="civilite" [address]="address"
     [city]="city" [zipCode]="zipCode"
     [country]="country" [email]="email"

@@ -9,6 +9,8 @@ export class ClientFormComponent implements OnInit {
 
   constructor() { }
 
+  hideRecap : boolean = true;
+  
   name : string = "";
   surname : string = "";
   civilite : string = "";
@@ -21,8 +23,8 @@ export class ClientFormComponent implements OnInit {
   login : string = "";
   password : string = "";
   confirmPassword : string = "";
-  validForm : boolean = true;
 
+  validForm : boolean = true;
   validName : boolean = true;
   validSurname : boolean = true;
   validCivilite : boolean = true;
@@ -57,6 +59,7 @@ export class ClientFormComponent implements OnInit {
     this.validLogin = this.validateInput(this.login, this.regexLogin);
     this.validPassword = this.validateInput(this.password, this.regexPassword);
     this.validConfirmPassword = this.validatePasswordMatch(this.password, this.confirmPassword);
+    this.hideRecap = false;
   }
 
   ngOnInit(): void {
