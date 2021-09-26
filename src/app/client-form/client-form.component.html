@@ -1,15 +1,15 @@
 <div class="row g-3 m-1" id="form">
     <div class="col-md-4">
         <label for="nom" class="form-label">Nom</label>
-        <input [(ngModel)]="name" type="text" class="form-control" id="nom" placeholder="Bon" required>
-        <div [hidden]="validName" id="invalidNom" class="invalid-input text-danger">
+        <input appInvalidInput="name" [(ngModel)]="name" type="text" class="form-control" id="nom" placeholder="Bon" required>
+        <div *ngIf="!validName" id="invalidNom" class="invalid-input text-danger">
             Veuillez entrer un nom valide.
         </div>
     </div>
     <div class="col-md-4">
         <label for="Prenom" class="form-label">Prénom</label>
         <input [(ngModel)]="surname" type="text" class="form-control" id="prenom" placeholder="Jean" required>
-        <div [hidden]="validSurname" id="invalidPrenom" class="invalid-input text-danger">
+        <div *ngIf="!validSurname" id="invalidPrenom" class="invalid-input text-danger">
             Veuillez entrer un prénom valide.
         </div>
     </div>
@@ -21,7 +21,7 @@
             <option>Monsieur</option>
             <option>Autre</option>
         </select>
-        <div [hidden]="validCivilite" id="invalidCivilite" class="invalid-input text-danger">
+        <div *ngIf="!validCivilite" id="invalidCivilite" class="invalid-input text-danger">
             Veuillez choisir une civilité.
         </div>
     </div>
@@ -29,21 +29,21 @@
     <div class="col-md-4">
         <label for="adresse" class="form-label">Adresse</label>
         <input [(ngModel)]="address" type="text" class="form-control" id="adresse" placeholder="15 rue du houblon" required>
-        <div [hidden]="validAddress" id="invalidAdresse" class="invalid-input text-danger">
+        <div *ngIf="!validAddress" id="invalidAdresse" class="invalid-input text-danger">
             Veuillez entrer une adresse valide.
         </div>
     </div>
     <div class="col-md-4">
         <label for="ville" class="form-label">Ville</label>
         <input [(ngModel)]="city" type="text" class="form-control" id="ville" placeholder="Strasbourg" required>
-        <div [hidden]="validCity" id="invalidVille" class="invalid-input text-danger">
+        <div *ngIf="!validCity" id="invalidVille" class="invalid-input text-danger">
             Veuillez entrer un nom valide.
         </div>
     </div>
     <div class="col-md-4">
         <label for="codePostal" class="form-label">Code postal</label>
         <input [(ngModel)]="zipCode" type="text" class="form-control" id="codePostal" placeholder="67000" required>
-        <div [hidden]="validZipCode" id="invalidCodePostal" class="invalid-input text-danger">
+        <div *ngIf="!validZipCode" id="invalidCodePostal" class="invalid-input text-danger">
             Veuillez entrer un code postal valide.
         </div>
     </div>
@@ -296,21 +296,21 @@
                 <option value="Zambia">Zambia</option>
                 <option value="Zimbabwe">Zimbabwe</option>
             </select>
-            <div [hidden]="validCountry" id="invalidCountry" class="invalid-input text-danger">
+            <div *ngIf="!validCountry" id="invalidCountry" class="invalid-input text-danger">
                 Veuillez choisir un pays.
             </div>
     </div>
     <div class="col-md-4">
         <label for="email" class="form-label">Email</label>
         <input [(ngModel)]="email" type="text" class="form-control" id="email" placeholder="jean.bon@mail.com" required>
-        <div [hidden]="validEmail" id="invalidEmail" class="invalid-input text-danger">
+        <div *ngIf="!validEmail" id="invalidEmail" class="invalid-input text-danger">
             Veuillez entrer un email valide.
         </div>
     </div>
     <div class="col-md-4">
         <label for="telephone" class="form-label">téléphone</label>
         <input [(ngModel)]="phone" type="text" class="form-control" id="telephone" placeholder="0122334455" required>
-        <div [hidden]="validPhone" id="invalidTelephone" class="invalid-input text-danger">
+        <div *ngIf="!validPhone" id="invalidTelephone" class="invalid-input text-danger">
             Veuillez entrer un numéro de téléphone valide.
         </div>
     </div>
@@ -318,7 +318,7 @@
     <div class="col-md-8">
         <label for="login" class="form-label">Login</label>
         <input [(ngModel)]="login" type="text" class="form-control" id="login" aria-describedby="inputGroupPrepend" placeholder="JeanBon67" required>
-        <div [hidden]="validLogin" id="invalidLogin" class="invalid-input text-danger">
+        <div *ngIf="!validLogin" id="invalidLogin" class="invalid-input text-danger">
             Veuillez choisir un login valide.
         </div>
     </div>
@@ -326,14 +326,14 @@
     <div class="col-md-6">
         <label for="password" class="form-label">Password</label>
         <input [(ngModel)]="password" type="password" class="form-control" id="password" aria-describedby="inputGroupPrepend" required>
-        <div [hidden]="validPassword" id="invalidPassword" class="invalid-input text-danger">
+        <div *ngIf="!validPassword" id="invalidPassword" class="invalid-input text-danger">
             Veuillez choisir un mot de passe valide.
         </div>
     </div>
     <div class="col-md-6">
         <label for="confirmPassword" class="form-label">Confirm Password</label>
         <input [(ngModel)]="confirmPassword" type="password" class="form-control" id="confirmPassword" aria-describedby="inputGroupPrepend" required>
-        <div [hidden]="validConfirmPassword" id="confirmPasswordInvalid" class="invalid-input text-danger">
+        <div *ngIf="!validConfirmPassword" id="confirmPasswordInvalid" class="invalid-input text-danger">
             Les mots de passe ne correspondent pas.
         </div>
     </div>

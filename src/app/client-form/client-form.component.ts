@@ -39,14 +39,12 @@ export class ClientFormComponent implements OnInit {
   regexNameSurnameCity : RegExp = new RegExp("^[A-Za-zÀ-ÖØ-öø-ÿ\-]+$");
   regexAddress : RegExp = new RegExp("^[0-9]{1,3}[\\s].[\\sA-Za-zÀ-ÖØ-öø-ÿ\-\']+$");
   regexZipCode : RegExp = new RegExp("^[0-9]{5}$");
-  regexEmail : RegExp = new RegExp("^[A-Za-zÀ-ÖØ-öø-ÿ\-\.]+@[A-Za-zÀ-ÖØ-öø-ÿ\-\.]*[\.].[A-Za-z]$");
+  regexEmail : RegExp = new RegExp("^[A-Za-zÀ-ÖØ-öø-ÿ\-\.]+@[A-Za-zÀ-ÖØ-öø-ÿ\-\.]+[\.].[A-Za-z]+$");
   regexPhone : RegExp = new RegExp("^([0-9]{2}){5}$");
   regexLogin : RegExp = new RegExp("^[A-Za-zÀ-ÖØ-öø-ÿ0-9]+$");
   regexPassword : RegExp = new RegExp("^[\\S]+$");
 
   onSubmit() : void {
-    console.log("form submited");
-
     this.validName = this.validateInput(this.name, this.regexNameSurnameCity);
     this.validSurname = this.validateInput(this.surname, this.regexNameSurnameCity);
     this.validCivilite = this.validateDropDownSelection(this.civilite);
@@ -59,7 +57,6 @@ export class ClientFormComponent implements OnInit {
     this.validLogin = this.validateInput(this.login, this.regexLogin);
     this.validPassword = this.validateInput(this.password, this.regexPassword);
     this.validConfirmPassword = this.validatePasswordMatch(this.password, this.confirmPassword);
-
   }
 
   ngOnInit(): void {
