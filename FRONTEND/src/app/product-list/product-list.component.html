@@ -1,0 +1,15 @@
+<header>
+    <h2 class="text-center border-bottom border-3 border-dark">Liste des produits</h2>
+</header>
+
+<div class="row g-3 m-1" *ngFor="let p of catalogue$ | async">
+    <div class="col-md-4 text-center">
+      {{ p.ref }}
+    </div>
+    <div class="col-md-4 text-center">
+      {{ p.libelle }}
+    </div>
+    <div class="col-md-4 text-center">
+      {{ p.prix }}€
+    </div>
+  </div>
