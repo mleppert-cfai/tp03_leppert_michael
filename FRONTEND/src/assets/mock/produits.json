@@ -1,5 +1,5 @@
 [
-    { "ref": "01", "libelle": "linux", "prix": 10 },
-    { "ref": "02", "libelle": "java", "prix": 11 },
-    { "ref": "03", "libelle": "anuglar", "prix": 12 }
+    { "ref": "01", "libelle": "linux", "categorie": "cat", "prix": 10 },
+    { "ref": "02", "libelle": "java", "categorie": "cat", "prix": 11 },
+    { "ref": "03", "libelle": "anuglar", "categorie": "cat", "prix": 12 }
   ]

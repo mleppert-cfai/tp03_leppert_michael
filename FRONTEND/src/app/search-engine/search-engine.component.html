@@ -1,1 +1,8 @@
-<p>search-engine works!</p>
+<div class="row g-3 m-5">
+    <input type="text" class="col-md-4">
+    <div class="col-md-1"></div>
+    <select class="col-md-4" id="categorie">
+        <option selected disabled value="">Choisir catégorie...</option>
+        <option *ngFor="let p of catalogue$ | async">{{ p.categorie }}</option>
+    </select>
+</div>

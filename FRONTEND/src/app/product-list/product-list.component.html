@@ -1,15 +1,35 @@
 <header>
-    <h2 class="text-center border-bottom border-3 border-dark">Liste des produits</h2>
+    <h2 class="m-5 text-center border-bottom border-3 border-dark">Liste des produits</h2>
 </header>
 
-<div class="row g-3 m-1" *ngFor="let p of catalogue$ | async">
-    <div class="col-md-4 text-center">
+<app-search-engine></app-search-engine>
+
+<div class="row g-3 m-1 border border-1 border-dark">
+    <div class="col-md-3 text-left">
+      référence
+    </div>
+    <div class="col-md-3 text-center border-3 border-dark">
+      libellé
+    </div>
+    <div class="col-md-3 text-center border-3 border-dark">
+      catégorie
+    </div>
+    <div class="col-md-3 text-center border-3 border-dark">
+      prix
+    </div>
+</div>
+
+<div class="row g-3 m-1 border border-1 border-dark" *ngFor="let p of catalogue$ | async">
+    <div class="col-md-3 text-left">
       {{ p.ref }}
     </div>
-    <div class="col-md-4 text-center">
+    <div class="col-md-3 text-center border-3 border-dark">
       {{ p.libelle }}
     </div>
-    <div class="col-md-4 text-center">
+    <div class="col-md-3 text-center border-3 border-dark">
+        {{ p.categorie }}
+    </div>
+    <div class="col-md-3 text-center border-3 border-dark">
       {{ p.prix }}€
     </div>
-  </div>
+</div>

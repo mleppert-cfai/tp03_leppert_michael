@@ -15,6 +15,7 @@ import { InvalidInputDirective } from './invalid-input.directive';
 import { ProductListComponent } from './product-list/product-list.component';
 import { SearchEngineComponent } from './search-engine/search-engine.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     InvalidInputDirective,
     ProductListComponent,
     SearchEngineComponent,
-    NavBarComponent
+    NavBarComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +40,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     RouterModule.forRoot([
       {path: 'client-form', component: ClientFormComponent},
       {path: 'product-list', component: ProductListComponent},
+      {path: '', redirectTo: '/client-form', pathMatch: 'full'},
+      {path: '**', component: PageNotFoundComponent}
     ]),
   ],
   providers: [],
