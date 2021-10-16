@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Categorie } from '../categorie';
+import { Periode } from '../periode';
 import { ProductServiceService } from '../product-service.service';
 
 @Component({
@@ -13,15 +14,38 @@ export class SearchEngineComponent implements OnInit {
   constructor(private productService: ProductServiceService) { }
 
   categories$!: Observable<Array<Categorie>>;
-  observer: any;
+  periodes$!: Observable<Array<Periode>>;
+  
+  observerCategories: any;
+  observerPeriodes: any;
+
+  @Input() filterCategorie: string = "";
+  @Input() filterPeriode: string = "";
 
   ngOnInit(): void {
     this.categories$ = this.productService.getCategories();
     
-    if (this.observer) {
-      this.observer.unsubscribe();
+    if (this.observerCategories) {
+      this.observerCategories.unsubscribe();
     }
-    this.observer = this.categories$.subscribe(
+    this.observerCategories = this.categories$.subscribe(
+      (value) => {
+        console.log(value);
+      },
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        console.log('Fini');
+      }
+    );
+
+    this.periodes$ = this.productService.getPeriodes();
+    
+    if (this.observerPeriodes) {
+      this.observerPeriodes.unsubscribe();
+    }
+    this.observerPeriodes = this.categories$.subscribe(
       (value) => {
         console.log(value);
       },
@@ -35,8 +59,11 @@ export class SearchEngineComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    if (this.observer) {
-      this.observer.unsubscribe();
+    if (this.observerCategories) {
+      this.observerCategories.unsubscribe();
+    }
+    if (this.observerPeriodes) {
+      this.observerPeriodes.unsubscribe();
     }
   }
 
