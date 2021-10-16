@@ -1,5 +1,7 @@
 export const environment = {
   production: true,
-  baseUrl: '../assets/mock/produits.json',
+  productsUrl: '../assets/mock/produits.json',
+  categoriesUrl: '../assets/mock/categories.json',
+  periodesUrl: '../assets/mock/periodes.json',
   name: 'default',
 };

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Product } from '../product';
+import { Categorie } from '../categorie';
 import { ProductServiceService } from '../product-service.service';
 
 @Component({
@@ -12,17 +12,16 @@ export class SearchEngineComponent implements OnInit {
 
   constructor(private productService: ProductServiceService) { }
 
-  catalogue$!: Observable<Array<Product>>;
-
+  categories$!: Observable<Array<Categorie>>;
   observer: any;
 
   ngOnInit(): void {
-    this.catalogue$ = this.productService.getCatalogue();
+    this.categories$ = this.productService.getCategories();
     
     if (this.observer) {
       this.observer.unsubscribe();
     }
-    this.observer = this.catalogue$.subscribe(
+    this.observer = this.categories$.subscribe(
       (value) => {
         console.log(value);
       },
@@ -39,6 +38,10 @@ export class SearchEngineComponent implements OnInit {
     if (this.observer) {
       this.observer.unsubscribe();
     }
+  }
+
+  onApplyFilter() {
+    
   }
 
 }

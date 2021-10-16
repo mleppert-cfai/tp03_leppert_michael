@@ -1,35 +1,67 @@
 <header>
-    <h2 class="m-5 text-center border-bottom border-3 border-dark">Liste des produits</h2>
+    <h2 class="m-5 text-center border-bottom border-2 border-dark">Nos produits</h2>
 </header>
 
-<app-search-engine></app-search-engine>
+<div class="row g-3 m-5">
+  <select [(ngModel)]="filterPeriode" class="col-md-4" id="selectPeriode">
+    <option selected value="">Toutes périodes</option>
+    <option *ngFor="let p of periodes$ | async "
+    [value]="p.periode" >
+        {{ p.periode }}
+    </option>
+</select>
+  <div class="col-md-1"></div>
+  <select [(ngModel)]="filterCategorie" class="col-md-4" id="selectCategorie">
+      <option selected value="">Toutes catégories</option>
+      <option *ngFor="let c of categories$ | async "
+      [value]="c.categorie" >
+          {{ c.categorie }}
+      </option>
+  </select>
+  <div class="col-md-1"></div>
+  <div class="col-md-2">
+      <button class="btn btn-primary" type="submit" (click)="onApplyFilter()">Appliquer filtres</button>
+  </div>
+</div>
 
 <div class="row g-3 m-1 border border-1 border-dark">
-    <div class="col-md-3 text-left">
+    <div class="col-md-2 text-left">
       référence
     </div>
-    <div class="col-md-3 text-center border-3 border-dark">
+    <div class="col-md-2 text-center">
+      image
+    </div>
+    <div class="col-md-2 text-center border-3 border-dark">
       libellé
     </div>
-    <div class="col-md-3 text-center border-3 border-dark">
+    <div class="col-md-2 text-center border-3 border-dark">
       catégorie
     </div>
-    <div class="col-md-3 text-center border-3 border-dark">
+    <div class="col-md-2 text-center border-3 border-dark">
+      période
+    </div>
+    <div class="col-md-2 text-center border-3 border-dark">
       prix
     </div>
 </div>
 
 <div class="row g-3 m-1 border border-1 border-dark" *ngFor="let p of catalogue$ | async">
-    <div class="col-md-3 text-left">
+    <div class="col-md-2 text-left">
       {{ p.ref }}
     </div>
-    <div class="col-md-3 text-center border-3 border-dark">
+    <div class="col-md-2 text-center">
+      <img src={{p.image}} alt="" width="250" height="250">
+    </div>
+    <div class="col-md-2 text-center border-3 border-dark">
       {{ p.libelle }}
     </div>
-    <div class="col-md-3 text-center border-3 border-dark">
+    <div class="col-md-2 text-center border-3 border-dark">
         {{ p.categorie }}
     </div>
-    <div class="col-md-3 text-center border-3 border-dark">
+    <div class="col-md-2 text-center border-3 border-dark">
+      {{ p.periode }}
+  </div>
+    <div class="col-md-2 text-center border-3 border-dark">
       {{ p.prix }}€
     </div>
 </div>

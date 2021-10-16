@@ -1,8 +1,15 @@
 <div class="row g-3 m-5">
     <input type="text" class="col-md-4">
     <div class="col-md-1"></div>
-    <select class="col-md-4" id="categorie">
-        <option selected disabled value="">Choisir catégorie...</option>
-        <option *ngFor="let p of catalogue$ | async">{{ p.categorie }}</option>
+    <select class="col-md-4" id="selectedCategorie">
+        <option selected value="">Tout</option>
+        <option *ngFor="let c of categories$ | async "
+        [value]="c.id" >
+            {{ c.categorie }}
+        </option>
     </select>
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+        <button class="btn btn-primary" type="submit" (click)="onApplyFilter()">Appliquer filtres</button>
+    </div>
 </div>
