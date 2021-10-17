@@ -343,7 +343,7 @@
     </div>
 
     <div class="col-12 text-center">
-        <button class="btn btn-primary" type="submit" (click)="onSubmit()" [disabled]="!validForm">Valider le formulaire</button>
+        <button class="btn btn-dark m-4" type="submit" (click)="onSubmit()" [disabled]="!validForm">Valider le formulaire</button>
     </div>
 
     <app-client-form-recap *ngIf="!hideRecap" [name]="name" [surname]="surname" 

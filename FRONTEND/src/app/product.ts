@@ -4,5 +4,6 @@ export class Product {
     libelle!: string;
     categorie!: string;
     periode!: string;
+    pays!: string;
     prix!: number;
   }

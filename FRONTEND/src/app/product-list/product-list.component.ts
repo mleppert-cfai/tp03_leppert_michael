@@ -5,6 +5,7 @@ import { Product } from '../product';
 import { ProductServiceService } from '../product-service.service';
 import {map} from 'rxjs/operators';
 import { Periode } from '../periode';
+import { Pays } from '../pays';
 
 @Component({
   selector: 'app-product-list',
@@ -18,13 +19,16 @@ export class ProductListComponent implements OnInit {
   catalogue$!: Observable<Array<Product>>;
   categories$!: Observable<Array<Categorie>>;
   periodes$!: Observable<Array<Periode>>;
+  pays$!: Observable<Array<Pays>>;
 
   @Input() filterCategorie: string = "";
   @Input() filterPeriode: string = "";
+  @Input() filterPays: string = "";
   
   observerCatalogue: any;
   observerCategories: any;
   observerPeriodes: any;
+  observerPays: any;
 
   ngOnInit(): void {
     this.catalogue$ = this.productService.getCatalogue();
@@ -66,7 +70,24 @@ export class ProductListComponent implements OnInit {
     if (this.observerPeriodes) {
       this.observerPeriodes.unsubscribe();
     }
-    this.observerPeriodes = this.categories$.subscribe(
+    this.observerPeriodes = this.periodes$.subscribe(
+      (value) => {
+        console.log(value);
+      },
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        console.log('Fini');
+      }
+    );
+
+    this.pays$ = this.productService.getPays();
+    
+    if (this.observerPays) {
+      this.observerPays.unsubscribe();
+    }
+    this.observerPays = this.pays$.subscribe(
       (value) => {
         console.log(value);
       },
@@ -89,18 +110,37 @@ export class ProductListComponent implements OnInit {
     if (this.observerPeriodes) {
       this.observerPeriodes.unsubscribe();
     }
+    if (this.observerPays) {
+      this.observerPays.unsubscribe();
+    }
   }
 
   onApplyFilter() {
-    if(this.filterCategorie != "" && this.filterPeriode != ""){
+    if(this.filterCategorie != "" && this.filterPeriode != "" && this.filterPays != ""){
+      this.catalogue$ = this.productService.getCatalogue().pipe(map(products => products.filter(prod => (prod.categorie === this.filterCategorie && prod.periode === this.filterPeriode && prod.pays === this.filterPays))));
+    }
+
+    else if(this.filterCategorie != "" && this.filterPeriode != ""){
       this.catalogue$ = this.productService.getCatalogue().pipe(map(products => products.filter(prod => (prod.categorie === this.filterCategorie && prod.periode === this.filterPeriode))));
     }
+    else if(this.filterCategorie != "" && this.filterPays != ""){
+      this.catalogue$ = this.productService.getCatalogue().pipe(map(products => products.filter(prod => (prod.categorie === this.filterCategorie && prod.pays === this.filterPays))));
+    }
+
+    else if(this.filterPeriode != "" && this.filterPays != ""){
+      this.catalogue$ = this.productService.getCatalogue().pipe(map(products => products.filter(prod => (prod.periode === this.filterPeriode && prod.pays === this.filterPays))));
+    }
+    
     else if(this.filterCategorie != ""){
       this.catalogue$ = this.productService.getCatalogue().pipe(map(products => products.filter(prod => prod.categorie === this.filterCategorie)));
     }
     else if(this.filterPeriode != ""){
       this.catalogue$ = this.productService.getCatalogue().pipe(map(products => products.filter(prod => prod.periode === this.filterPeriode)));
     }
+    else if(this.filterPays != ""){
+      this.catalogue$ = this.productService.getCatalogue().pipe(map(products => products.filter(prod => prod.pays === this.filterPays)));
+    }
+
     else{
       this.catalogue$ = this.productService.getCatalogue();
     }

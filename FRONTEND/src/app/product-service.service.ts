@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Product } from './product';
 import { Categorie } from './categorie';
 import { Periode } from './periode';
+import { Pays } from './pays';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +24,9 @@ export class ProductServiceService {
 
   public getPeriodes(): Observable<Array<Periode>> {
     return this.httpClient.get<Array<Periode>>(environment.periodesUrl);
+  }
+
+  public getPays(): Observable<Array<Pays>> {
+    return this.httpClient.get<Array<Pays>>(environment.paysUrl);
   }
 }

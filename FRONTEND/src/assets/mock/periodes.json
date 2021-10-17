@@ -1,5 +1,6 @@
 [
-    { "id": "01", "periode": "WW I"},
-    { "id": "02", "periode": "WW II"},
-    { "id": "03", "periode": "Guerre froide"}
+    { "id": "01", "periode": "WW I", "description": "1914-1918"},
+    { "id": "02", "periode": "WW II", "description": "1939-1945"},
+    { "id": "03", "periode": "Guerre froide", "description": "1946-1989"},
+    { "id": "04", "periode": "Actuelle", "description": "1990-Aujourd'hui"}
   ]
