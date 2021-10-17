@@ -9,5 +9,11 @@
     { "ref": "08", "image": "assets/img/vw_kubelwagen.jpg", "libelle": "VW Kübelwagen", "categorie": "Véhicule", "periode": "WWII", "pays":"Allemagne", "prix": 43000.00 },
     { "ref": "09", "image": "assets/img/sidecar_oural_m72.jpg", "libelle": "Sidecar Oural M72", "categorie": "Véhicule", "periode": "WWII", "pays":"Etats-Unis", "prix": 13000.00 },
     { "ref": "10", "image": "assets/img/chenilles_m4_sherman.jpg", "libelle": "Chenilles M4 Sherman", "categorie": "Pièces détachées véhicule", "periode": "WWII", "pays":"Etats-Unis", "prix": 13000.00 },
-    { "ref": "11", "image": "assets/img/m55_quad_gun.jpg", "libelle": "M55 Quad gun", "categorie": "Artillerie", "periode": "WWII", "pays":"Etats-Unis", "prix": 18000.00 }
+    { "ref": "11", "image": "assets/img/m55_quad_gun.jpg", "libelle": "M55 Quad gun", "categorie": "Artillerie", "periode": "WWII", "pays":"Etats-Unis", "prix": 18000.00 },
+    { "ref": "12", "image": "assets/img/cartouchiere_francaise_ww1.jpg", "libelle": "Cartouchière française WWI", "categorie": "Divers", "periode": "WWI", "pays":"France", "prix": 30.00 },
+    { "ref": "13", "image": "assets/img/saracen_armored_carrier.jpg", "libelle": "1959 Saracen ARMORED PERSONNEL CARRIER", "categorie": "Véhicule", "periode": "Guerre froide", "pays":"Commonwealth", "prix": 25000.00 },
+    { "ref": "14", "image": "assets/img/chenillete_t16_canada.jpg", "libelle": "Chenillette T 16 windsor Ford Canada", "categorie": "Véhicule", "periode": "WWII", "pays":"Commonwealth", "prix": 46000.00 },
+    { "ref": "15", "image": "assets/img/aml90.jpg", "libelle": "AML 90 Panhard 1974", "categorie": "Véhicule", "periode": "Guerre froide", "pays":"France", "prix": 32000.00 },
+    { "ref": "16", "image": "assets/img/brdm2.jpg", "libelle": "BRDM 2", "categorie": "Véhicule", "periode": "Guerre froide", "pays":"Russie / URSS", "prix": 12200.00 },
+    { "ref": "17", "image": "assets/img/plddvk53.jpg", "libelle": "PLDDVK 53", "categorie": "Véhicule", "periode": "Guerre froide", "pays":"Russie / URSS", "prix": 13500.00 }
   ]
