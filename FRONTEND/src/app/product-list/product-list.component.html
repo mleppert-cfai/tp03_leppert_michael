@@ -29,50 +29,6 @@
   </div>
 </div>
 
-<div class="row g-3 m-1 border border-1 border-dark">
-    <div class="col-md-1 text-left">
-      référence
-    </div>
-    <div class="col-md-2 text-center">
-      image
-    </div>
-    <div class="col-md-2 text-center border-3 border-dark">
-      libellé
-    </div>
-    <div class="col-md-2 text-center border-3 border-dark">
-      catégorie
-    </div>
-    <div class="col-md-2 text-center border-3 border-dark">
-      période
-    </div>
-    <div class="col-md-2 text-center border-3 border-dark">
-      pays
-    </div>
-    <div class="col-md-1 text-center border-3 border-dark">
-      prix
-    </div>
-</div>
-
-<div class="row g-3 m-1 border border-1 border-dark" *ngFor="let p of catalogue$ | async">
-    <div class="col-md-1 text-left">
-      {{ p.ref }}
-    </div>
-    <div class="col-md-2 text-center">
-      <img src={{p.image}} alt="" width="250" height="250">
-    </div>
-    <div class="col-md-2 text-center border-3 border-dark">
-      {{ p.libelle }}
-    </div>
-    <div class="col-md-2 text-center border-3 border-dark">
-        {{ p.categorie }}
-    </div>
-    <div class="col-md-2 text-center border-3 border-dark">
-      {{ p.periode }}
-    </div>
-    <div class="col-md-2 text-center border-3 border-dark">
-      {{ p.pays }}
-    </div>  
-    <div class="col-md-1 text-center border-3 border-dark">
-      {{ p.prix }}€
-    </div>
+<div class="row g-3 m-1" *ngFor="let p of catalogue$ | async">
+    <app-product-card [product]="p"></app-product-card>
 </div>

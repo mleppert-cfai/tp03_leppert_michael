@@ -16,6 +16,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { SearchEngineComponent } from './search-engine/search-engine.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ProductListComponent,
     SearchEngineComponent,
     NavBarComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
